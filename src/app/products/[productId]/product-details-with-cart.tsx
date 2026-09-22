@@ -1,6 +1,6 @@
 "use client";
 
-import { AddToCartButton } from "@/features/cart";
+import { useCart } from "@/features/cart";
 import { ProductDetailsPage } from "@/features/products";
 
 type ProductDetailsWithCartProps = {
@@ -10,18 +10,23 @@ type ProductDetailsWithCartProps = {
 export function ProductDetailsWithCart({
   productId,
 }: ProductDetailsWithCartProps) {
+  const { addItem } = useCart();
+
   return (
     <ProductDetailsPage
       productId={productId}
-      actions={({ product, selectedOptions }) => (
-        <AddToCartButton
-          productId={product.id}
-          name={product.name}
-          price={product.price}
-          image={product.images[0]}
-          selectedOptions={selectedOptions}
-        />
-      )}
+      onAddToCart={({ product, selectedOptions, quantity, price }) => {
+        const input = {
+          productId: product.id,
+          name: product.name,
+          price,
+          image: product.images[0],
+          selectedOptions,
+        };
+        for (let index = 0; index < quantity; index += 1) {
+          addItem(input);
+        }
+      }}
     />
   );
 }
