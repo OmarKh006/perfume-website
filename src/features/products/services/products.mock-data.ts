@@ -16,14 +16,41 @@ export const mockProducts: Product[] = [
   {
     id: "santal-parchment",
     name: "Santal Parchment",
-    description: "Warm sandalwood layered with cardamom.",
+    description:
+      "Santal Parchment wraps around the skin like vintage vellum paper. It opens with bright top notes, shifting to clean papyrus and warm, rich sandalwood that dry down into dry cardamom and amber.",
     notes: "Woody / Sandalwood & Cardamom",
     price: 220,
-    images: ["/images/products/santal-parchment.png"],
+    images: [
+      "/images/products/santal-parchment/hero.png",
+      "/images/products/santal-parchment/thumb-0.png",
+      "/images/products/santal-parchment/thumb-1.png",
+      "/images/products/santal-parchment/thumb-2.png",
+    ],
     category: "pure-extractions",
     scentFamily: "woody",
-    occasion: "personal-use",
+    occasion: "evening",
     options: [],
+    volumes: [
+      { label: "30 ml", price: 140 },
+      { label: "50 ml", price: 180 },
+      { label: "100 ml", price: 220 },
+    ],
+    scentFamilyLabel: "Woody",
+    occasionLabel: "Evening",
+    availabilityLabel: "Available in Atelier",
+    anatomy: {
+      description:
+        "Santal Parchment wraps around the skin like vintage vellum paper. It opens with bright top notes, shifting to clean papyrus and warm, rich sandalwood that dry down into dry cardamom and amber.",
+      top: "Sicilian Bergamot, Pink Pepper",
+      heart: "Egyptian Jasmine Sambac, Papyrus",
+      base: "West Indian Sandalwood, Cardamom, Amber",
+    },
+    relatedIds: [
+      "fleur-de-lune",
+      "noir-cocoon",
+      "sol-dor",
+      "rose-absolute",
+    ],
   },
   {
     id: "noir-cocoon",
